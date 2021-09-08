@@ -4,7 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.accessphonebook.databinding.ContactListItenBinding
+import com.example.accessphonebook.BR
+import com.example.accessphonebook.R
+import com.example.accessphonebook.databinding.ContactListItemBinding
 
 class NumberListRecyclerViewAdapter(
     private val contactList: ArrayList<String>,
@@ -14,7 +16,7 @@ class NumberListRecyclerViewAdapter(
         parent: ViewGroup,
         viewType: Int
     ): ViewHolder {
-        val binding: ContactListItenBinding = DataBindingUtil.inflate(
+        val binding: ContactListItemBinding = DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
             R.layout.contact_list_item, parent, false
         )
@@ -32,7 +34,7 @@ class NumberListRecyclerViewAdapter(
         return contactList.size
     }
 
-    inner class ViewHolder(var binding: ContactListItenBinding) : RecyclerView.ViewHolder(
+    inner class ViewHolder(var binding: ContactListItemBinding) : RecyclerView.ViewHolder(
         binding.root
     ) {
         fun bind(obj: Any?) {
